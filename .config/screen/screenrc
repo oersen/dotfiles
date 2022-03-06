@@ -1,0 +1,6 @@
+altscreen on
+defscrollback 8192
+escape "^  "
+startup_message off
+vbell off
+caption always "%{wk}%?%-Lw%?%n*%f %t%?(%u)%?%?%+Lw%=[%S@%H] [%D %d %M %Y %0C %A]"

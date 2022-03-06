@@ -1,0 +1,97 @@
+augroup my_autocmds
+    autocmd!
+
+    autocmd BufEnter */tmp/* setlocal noundofile
+    autocmd BufEnter /dev/* setlocal paste noundofile viminfofile=NONE
+    autocmd BufWritePre * %s/\s\+$//e
+
+    autocmd FileType * setlocal formatoptions+=j formatoptions-=o formatoptions-=r
+    autocmd TerminalOpen * setlocal nonumber norelativenumber
+augroup END
+
+filetype plugin indent on
+silent! colorscheme apprentice
+syntax enable
+
+let g:netrw_winsize = 16
+
+set encoding=utf-8 title ttyfast
+set number relativenumber
+
+set autoread hidden lazyredraw
+set splitbelow splitright
+
+set nohlsearch incsearch wrapscan
+set ignorecase smartcase
+
+set autoindent expandtab shiftround
+set shiftwidth=4 softtabstop=4
+set breakindent linebreak wrap
+
+set backspace=indent,eol,start
+set diffopt+=algorithm:histogram,indent-heuristic
+set pastetoggle=<F4> scrolloff=2
+
+set undofile undodir=$XDG_STATE_HOME/vim
+set backupdir=$XDG_STATE_HOME/vim directory=$XDG_STATE_HOME/vim
+set viminfofile=$XDG_STATE_HOME/vim/viminfo
+
+set statusline=%F%m%r%h%w%=[%l/%L][%02v]\ %y[%{&fileformat}]
+set laststatus=2 showcmd showmode
+set wildignorecase wildmenu wildmode=list:longest,full
+
+if has("clipboard")
+    set clipboard^=unnamedplus
+endif
+
+nmap <Space> <Leader>
+
+nnoremap <Leader>c :let &l:colorcolumn = 80 - &l:colorcolumn<CR>
+nnoremap <Leader>d :filetype detect<CR>
+nnoremap <Leader>f :Vexplore<CR>
+nnoremap <leader>g :vimgrep // %<Bar>botright copen<C-b><S-Right><S-Right><Left>
+nnoremap <Leader>h :setlocal hlsearch!<CR>
+nnoremap <Leader>j :cnext<CR>
+nnoremap <Leader>k :cprevious<CR>
+nnoremap <Leader>l :setlocal list!<CR>
+nnoremap <Leader>m :write<Bar>make<CR>
+nnoremap <Leader>n :setlocal number! relativenumber!<CR>
+nnoremap <Leader>p "0p
+nnoremap <Leader>P "0P
+nnoremap <Leader>r :if &filetype ==# "vim"<Bar>source %<Bar>endif<CR>
+nnoremap <Leader>s :setlocal spell!<CR>
+nnoremap <Leader>t :terminal<CR>
+nnoremap <Leader>v :vertical terminal<CR>
+nnoremap <Leader>w :setlocal wrap!<CR>
+nnoremap <Leader>x :Hexplore<CR>
+
+nnoremap <Leader><Left> <C-t>
+nnoremap <Leader><Right> <C-]>
+
+nnoremap <Leader><Down> :bnext<CR>
+nnoremap <Leader><Up> :bprevious<CR>
+
+nnoremap Y y$
+
+xnoremap x "_x
+xnoremap X "_X
+
+xnoremap < <gv
+xnoremap > >gv
+
+cnoremap vh vertical help
+
+inoremap ( ()<Left>
+inoremap { {}<Left>
+inoremap [ []<Left>
+inoremap " ""<Left>
+inoremap ` ``<Left>
+
+nnoremap <Down> gj
+nnoremap <Up> gk
+nnoremap <End> g$
+nnoremap <Home> g0
+inoremap <Down> <C-o>gj
+inoremap <Up> <C-o>gk
+inoremap <End> <C-o>g$
+inoremap <Home> <C-o>g0

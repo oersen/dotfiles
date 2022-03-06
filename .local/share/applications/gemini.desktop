@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Gemini Client
+Icon=utilities-terminal
+Exec=gmnlm %U
+MimeType=x-scheme-handler/gemini;
+Terminal=true
+NoDisplay=true

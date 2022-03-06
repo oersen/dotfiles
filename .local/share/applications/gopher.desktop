@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Gopher Client
+Icon=utilities-terminal
+Exec=lynx %U
+MimeType=x-scheme-handler/gopher;
+Terminal=true
+NoDisplay=true

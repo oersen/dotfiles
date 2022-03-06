@@ -1,0 +1,2 @@
+--format 'bestvideo+bestaudio'
+--output ~/Downloads/%(title)s.%(ext)s

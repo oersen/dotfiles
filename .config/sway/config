@@ -1,0 +1,213 @@
+include /etc/sway/config.d/*
+
+set $mod Mod4
+set $black "#1c1c1c"
+set $gray "#6c6c6c"
+set $white "#bcbcbc"
+
+input type:keyboard {
+    xkb_layout "tr,tr(f),us"
+    xkb_numlock enabled
+    xkb_options "caps:escape"
+}
+
+output * bg ~/Pictures/wallpaper fill
+seat * hide_cursor 36000
+
+bar swaybar_command waybar
+focus_follows_mouse no
+font pango:sans-serif 11
+
+default_border pixel
+default_floating_border pixel
+default_orientation auto
+
+client.focused $black $white $black $gray $white
+client.focused_inactive $gray $gray $black $white $gray
+client.unfocused $black $gray $black $white $gray
+client.urgent $white $gray $black $white $gray
+
+for_window [app_id="^blueman"] floating enable
+for_window [app_id="^firefox$" title="^About Mozilla Firefox|Library$"] floating enable
+for_window [app_id="^galculator$"] floating enable
+for_window [app_id="^imv$"] floating enable
+for_window [app_id="^libreoffice"] floating enable
+for_window [app_id="^mpv$"] floating enable
+for_window [app_id="^nm-connection-editor$"] floating enable
+for_window [app_id="^org\.keepassxc\.KeePassXC$"] floating enable
+for_window [app_id="^org\.pwmt\.zathura$"] floating enable
+for_window [app_id="^pavucontrol$"] floating enable
+for_window [app_id="^pcmanfm$"] floating enable
+for_window [app_id="^simple-scan$"] floating enable
+for_window [app_id="^system-config-printer$"] floating enable
+for_window [app_id="^udiskie$"] floating enable
+for_window [app_id="^wdisplays$"] floating enable
+for_window [class="^Gvim$"] floating enable
+for_window [floating] border pixel
+for_window [shell="xwayland"] title_format "%title [%shell]"
+
+bindsym $mod+Return exec foot
+bindsym $mod+d exec wofi -a
+
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec power-menu.sh
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+x exec swaylock && mpc pause
+bindsym $mod+x exec swaylock
+bindsym Print exec ss-menu.sh
+bindsym Ctrl+Shift+space exec switch-kblayout.pl
+
+bindsym --locked $mod+p exec mpc toggle
+bindsym --locked $mod+bracketleft exec mpc seek -6
+bindsym --locked $mod+braceleft exec mpc seek -60
+bindsym --locked $mod+bracketright exec mpc seek +6
+bindsym --locked $mod+braceright exec mpc seek +60
+bindsym --locked $mod+greater exec mpc next
+bindsym --locked $mod+less exec mpc prev
+
+bindsym $mod+Delete exec makoctl dismiss
+bindsym $mod+Shift+Delete exec makoctl dismiss -a
+bindsym $mod+Insert exec notify-send -i editcopy -t 8000 "CLIPBOARD:" "$(wl-paste)"
+bindsym $mod+Shift+Insert exec notify-send -i editcopy -t 8000 "PRIMARY:" "$(wl-paste -p)"
+
+bindsym $mod+c exec galculator
+bindsym $mod+q exec qrencode -o- "$(wl-paste)" | imv -
+bindsym $mod+Shift+period exec pick-color.sh
+bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
+bindsym $mod+Shift+d exec udiskie --appindicator
+bindsym $mod+Shift+f exec pcmanfm
+bindsym $mod+Shift+p exec pass-menu.sh
+bindsym $mod+Shift+s exec pkill wshowkeys || wshowkeys
+bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
+bindsym $mod+Shift+u exec pick-emoji.sh
+bindsym $mod+Shift+v exec mpv -- "$(wl-paste)"
+bindsym $mod+Shift+w exec firefox
+
+bindsym XF86Launch1 exec xdg-open "$XDG_CONFIG_HOME/sway/config"
+bindsym XF86Launch3 exec blueman-manager
+bindsym XF86TouchpadOn exec swaymsg input type:touchpad events enabled
+bindsym XF86TouchpadOff exec swaymsg input type:touchpad events disabled
+bindsym XF86WLAN exec [ "$(nmcli radio wifi)" = "enabled" ] && nmcli radio wifi off || nmcli radio wifi on
+
+bindsym --locked XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +4%
+bindsym --locked XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -4%
+bindsym --locked XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+bindsym --locked $mod+XF86AudioRaiseVolume exec pactl set-source-volume @DEFAULT_SOURCE@ +4%
+bindsym --locked $mod+XF86AudioLowerVolume exec pactl set-source-volume @DEFAULT_SOURCE@ -4%
+bindsym --locked $mod+XF86AudioMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym --locked XF86Display exec toggle-display.sh
+bindsym --locked XF86MonBrightnessDown exec brightnessctl set 4%-
+bindsym --locked XF86MonBrightnessUp exec brightnessctl set 4%+
+
+bindsym --locked XF86AudioPlay exec mpc toggle
+bindsym --locked XF86AudioPrev exec mpc prev
+bindsym --locked XF86AudioNext exec mpc next
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Left focus output left
+bindsym $mod+Down focus output down
+bindsym $mod+Up focus output up
+bindsym $mod+Right focus output right
+
+bindsym $mod+Shift+Left move container to output left
+bindsym $mod+Shift+Down move container to output down
+bindsym $mod+Shift+Up move container to output up
+bindsym $mod+Shift+Right move container to output right
+
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+Down move workspace to output down
+bindsym $mod+Ctrl+Up move workspace to output up
+bindsym $mod+Ctrl+Right move workspace to output right
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+bindsym $mod+Home workspace 1
+bindsym $mod+Shift+Home move container to workspace 1
+bindsym $mod+End workspace 10
+bindsym $mod+Shift+End move container to workspace 10
+bindsym $mod+Prior workspace prev
+bindsym $mod+Shift+Prior move container to workspace prev
+bindsym $mod+Next workspace next
+bindsym $mod+Shift+Next move container to workspace next
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
+
+bindsym $mod+b split horizontal
+bindsym $mod+v split vertical
+bindsym $mod+t split toggle
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+f fullscreen
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+bindsym $mod+Shift+space floating toggle
+floating_modifier $mod normal
+
+bindsym $mod+i gaps inner current plus 1
+bindsym $mod+Shift+i gaps inner current minus 1
+bindsym $mod+o gaps outer current plus 1
+bindsym $mod+Shift+o gaps outer current minus 1
+bindsym $mod+g gaps inner current set 1; gaps outer current set 1
+bindsym $mod+Shift+g gaps inner current set 0; gaps outer current set 0
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+mode "resize" {
+    bindsym h resize shrink width 10px
+    bindsym j resize grow height 10px
+    bindsym k resize shrink height 10px
+    bindsym l resize grow width 10px
+
+    bindsym Left resize shrink width 4ppt
+    bindsym Down resize grow height 4ppt
+    bindsym Up resize shrink height 4ppt
+    bindsym Right resize grow width 4ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec nm-applet --indicator
+exec wlsunset -T4800 -t3600 -l39.9 -L32.8
+exec swayidle -w \
+        timeout 60 "swaymsg 'output * dpms off'" \
+        resume "swaymsg 'output * dpms on'" \
+        timeout 600 swaylock \
+        before-sleep swaylock

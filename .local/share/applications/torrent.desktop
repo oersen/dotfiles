@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Torrent Client
+Icon=transmission
+Exec=add-torrent.sh %U
+MimeType=application/x-bittorrent;x-scheme-handler/magnet;
+Terminal=false
+NoDisplay=true

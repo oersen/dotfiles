@@ -1,0 +1,14 @@
+lyrics_directory = ~/.local/state/lyrics
+mpd_host = localhost
+mpd_music_dir = ~/Music
+ncmpcpp_directory = ~/.local/state/ncmpcpp
+
+clock_display_seconds = yes
+message_delay_time = 1
+mouse_support = no
+startup_screen = media_library
+user_interface = alternative
+visualizer_type = spectrum
+
+external_editor = vim
+use_console_editor = yes

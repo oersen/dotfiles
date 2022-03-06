@@ -1,0 +1,37 @@
+[commit]
+    gpgsign = true
+    verbose = true
+
+[credential]
+    helper = cache
+
+[credential "https://codeberg.org"]
+    username = ersen
+
+[credential "https://gitlab.com"]
+    username = ersen
+
+[diff]
+    tool = vimdiff
+
+[difftool]
+    prompt = false
+
+[init]
+    defaultbranch = master
+
+[pull]
+    ff = only
+
+[sendemail]
+    annotate = yes
+    smtpserver = mail.gandi.net
+    smtpuser = oguz@ersen.moe
+    smtpencryption = ssl
+    smtpserverport = 465
+    suppresscc = self
+
+[user]
+    name = Oğuz Ersen
+    email = oguz@ersen.moe
+    signingkey = 972720757532B130

@@ -1,0 +1,7 @@
+program_options:
+  automount: false
+  file_manager: "xdg-open"
+  terminal: "foot -D"
+
+notifications:
+  timeout: 4

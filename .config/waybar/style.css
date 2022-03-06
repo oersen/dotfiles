@@ -1,0 +1,78 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: sans-serif, FontAwesome;
+    font-size: 11px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: #1c1c1c;
+    color: #bcbcbc;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+@keyframes blink {
+    to {
+        background-color: #bcbcbc;
+        color: #1c1c1c;
+    }
+}
+
+label:focus {
+    background-color: #6c6c6c;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#idle_inhibitor,
+#language,
+#memory,
+#mode,
+#pulseaudio,
+#taskbar,
+#temperature,
+#tray,
+#workspaces button {
+    color: #bcbcbc;
+    margin: 3px 2px;
+    padding: 0 6px;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #6c6c6c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#mode {
+    background-color: #6c6c6c;
+    color: #1c1c1c;
+}
+
+#taskbar button:hover {
+    background-color: #6c6c6c;
+}
+
+#temperature.critical {
+    background-color: #6c6c6c;
+}
+
+#workspaces button:hover {
+    background-color: #6c6c6c;
+}
+
+#workspaces button.focused {
+    background-color: #bcbcbc;
+    color: #1c1c1c;
+}
+
+#workspaces button.urgent {
+    background-color: #6c6c6c;
+}

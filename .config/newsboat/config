@@ -1,0 +1,21 @@
+auto-reload yes
+browser xdg-open
+confirm-exit yes
+max-items 96
+notify-always yes
+notify-beep yes
+reload-threads 3
+
+color info default black
+color listfocus black white
+color listfocus_unread black white bold
+color listnormal_unread blue default
+
+highlight article "^(Feed|Title|Author|Date):.*" red default
+highlight article "^(Feed|Title|Author|Date|Links?):" blue default bold
+highlight article "(gemini|gopher)://[^[:space:]]+" blue default
+highlight article "https?://[^[:space:]]+" green default
+highlight article "\\[[[:digit:]]+\\]" magenta default bold
+highlight article "\\[image[^]]+\\]" yellow default bold
+highlight article ":.*\\(link\\)" green default
+highlight article ":.*\\(image\\)" cyan default

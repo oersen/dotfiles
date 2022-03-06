@@ -1,0 +1,7 @@
+[Default]
+save_dir=/tmp
+save_filename_format=img-%Y%m%d-%H%M%S.png
+show_panel=true
+line_size=4
+text_size=24
+text_font=monospace

@@ -1,0 +1,111 @@
+{
+    "height": 30,
+    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-right": ["memory", "cpu", "temperature", "battery", "backlight", "pulseaudio#source", "pulseaudio", "idle_inhibitor", "sway/language", "clock", "tray"],
+    "sway/language": {
+        "format": "{long}",
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "{} ✳"
+    },
+    "sway/workspaces": {
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "I",
+            "2": "II",
+            "3": "III",
+            "4": "IV",
+            "5": "V",
+            "6": "VI",
+            "7": "VII",
+            "8": "VIII",
+            "9": "IX",
+            "10": "X",
+            "urgent": "",
+            "focused": "",
+            "default": ""
+        }
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""],
+        "on-scroll-down": "brightnessctl set 1%-",
+        "on-scroll-up": "brightnessctl set 1%+"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "warning": 32,
+            "critical": 16
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%a %d %b %Y}",
+        "tooltip-format": "<small>{:%B %Y}</small>\n<tt><small>{calendar}</small></tt>",
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "format-alt": "{load}% ",
+        "tooltip": false,
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "memory": {
+        "format": "{percentage}% ",
+        "format-alt": "{avail:0.1f}GiB ",
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": "{volume}%  ",
+        "format-muted": "{volume}% ",
+        "format-icons": {
+            "car": "",
+            "hands-free": "",
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol -t 3"
+    },
+    "pulseaudio#source": {
+        "format": "{format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "{volume}% ",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click-right": "pavucontrol -t 4",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC} °C {icon}",
+        "format-alt": "{temperatureF} °F {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6
+    },
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 16,
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "on-click-right": "minimize"
+    }
+}
