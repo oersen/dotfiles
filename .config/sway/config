@@ -6,7 +6,7 @@ set $gray "#6c6c6c"
 set $white "#bcbcbc"
 
 input type:keyboard {
-    xkb_layout "tr,tr(f),us"
+    xkb_layout "tr"
     xkb_numlock enabled
     xkb_options "caps:escape"
 }
