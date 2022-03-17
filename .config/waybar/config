@@ -1,6 +1,7 @@
 {
     "height": 30,
-    "modules-left": ["sway/workspaces", "sway/mode", "wlr/taskbar"],
+    "modules-left": ["sway/workspaces", "wlr/taskbar"],
+    "modules-center": ["sway/mode"],
     "modules-right": ["memory", "cpu", "temperature", "battery", "backlight", "pulseaudio#source", "pulseaudio", "idle_inhibitor", "sway/language", "clock", "tray"],
     "sway/language": {
         "format": "{long}",

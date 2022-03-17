@@ -28,7 +28,7 @@ client.unfocused $black $gray $black $white $gray
 client.urgent $white $gray $black $white $gray
 
 for_window [app_id="^blueman"] floating enable
-for_window [app_id="^firefox$" title="^About Mozilla Firefox|Library$"] floating enable
+for_window [app_id="^firefox$" title="^About Mozilla Firefox|Library|Tor Browser$"] floating enable
 for_window [app_id="^galculator$"] floating enable
 for_window [app_id="^imv$"] floating enable
 for_window [app_id="^libreoffice"] floating enable
@@ -50,10 +50,7 @@ bindsym $mod+Return exec foot
 bindsym $mod+d exec wofi -a
 
 bindsym $mod+Shift+c reload
-bindsym $mod+Shift+e exec power-menu.sh
 bindsym $mod+Shift+q kill
-bindsym $mod+Shift+x exec swaylock && mpc pause
-bindsym $mod+x exec swaylock
 bindsym Print exec ss-menu.sh
 bindsym Ctrl+Shift+space exec switch-kblayout.pl
 
@@ -202,6 +199,21 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+set $exit "EXIT: [S]uspend, [R]eboot, [P]oweroff, [L]ogout, [X]lock"
+mode $exit {
+    bindsym {
+        s exec systemctl suspend, mode "default"
+        p exec systemctl poweroff
+        r exec systemctl reboot
+        l exec loginctl terminate-session self
+        x exec swaylock, mode "default"
+
+        Return mode "default"
+        Escape mode "default"
+    }
+}
+bindsym $mod+Shift+e mode $exit
 
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator
