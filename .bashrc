@@ -25,6 +25,7 @@ alias \
     iperl='RLWRAP_HOME=$XDG_STATE_HOME rlwrap -A -pWHITE -S"perl> " perl -wnE'\''say eval()//$@'\' \
     irssi='irssi --config="$XDG_CONFIG_HOME/irssi/config" --home="$XDG_DATA_HOME/irssi"' \
     ls='ls --color=auto --group-directories-first' \
+    mbsync='mbsync --config="$XDG_CONFIG_HOME/isync/mbsyncrc"' \
     mv='mv -iv' \
     rm='rm -Iv'
 

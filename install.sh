@@ -40,6 +40,7 @@ sudo dnf install \
     @libreoffice \
     @networkmanager-submodules \
     @printing \
+    abook \
     android-tools \
     asciiquarium \
     atool \
@@ -83,6 +84,7 @@ sudo dnf install \
     ImageMagick \
     imv \
     irssi \
+    isync \
     iwl6000g2b-firmware \
     jq \
     libva-intel-driver \
@@ -100,7 +102,9 @@ sudo dnf install \
     mpc \
     mpd \
     mpv \
+    msmtp \
     mtr \
+    mutt \
     ncdu \
     ncmpcpp \
     neofetch \
@@ -110,6 +114,7 @@ sudo dnf install \
     newsboat \
     nicotine+ \
     nmap \
+    notmuch-mutt \
     nyancat \
     pandoc \
     papirus-icon-theme \
@@ -151,6 +156,7 @@ sudo dnf install \
     transmission-daemon \
     udiskie \
     unrar \
+    urlview \
     usbutils \
     util-linux-user \
     vim-enhanced \

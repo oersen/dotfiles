@@ -25,10 +25,7 @@
 
 [sendemail]
     annotate = yes
-    smtpserver = mail.gandi.net
-    smtpuser = oguz@ersen.moe
-    smtpencryption = ssl
-    smtpserverport = 465
+    sendmailcmd = msmtp
     suppresscc = self
 
 [user]

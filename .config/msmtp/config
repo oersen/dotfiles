@@ -1,0 +1,14 @@
+defaults
+auth on
+tls on
+logfile /tmp/msmtp.log
+
+account oguz@ersen.moe
+host mail.gandi.net
+port 465
+tls_starttls off
+user oguz@ersen.moe
+from oguz@ersen.moe
+passwordeval "pass oguz@ersen.moe"
+
+account default : oguz@ersen.moe

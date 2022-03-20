@@ -1,0 +1,21 @@
+IMAPStore oguz@ersen.moe-remote
+Host mail.gandi.net
+Port 993
+User oguz@ersen.moe
+PassCmd "pass oguz@ersen.moe"
+SSLType IMAPS
+
+MaildirStore oguz@ersen.moe-local
+Subfolders Verbatim
+Path ~/.local/share/mail/oguz@ersen.moe/
+INBOX ~/.local/share/mail/oguz@ersen.moe/INBOX
+Flatten .
+
+Channel oguz@ersen.moe
+Far :oguz@ersen.moe-remote:
+Near :oguz@ersen.moe-local:
+Patterns INBOX Drafts Sent Trash
+SyncState *
+Create Both
+Expunge Both
+MaxMessages 0
