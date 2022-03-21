@@ -1,0 +1,4 @@
+set add_email_prevent_duplicates=true
+set mutt_command=mutt
+set sort_field=name
+set www_command=lynx

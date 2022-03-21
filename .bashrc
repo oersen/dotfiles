@@ -19,6 +19,7 @@ HISTSIZE="65536"
 HISTTIMEFORMAT="[%c]  "
 
 alias \
+    abook='abook --config="$XDG_CONFIG_HOME/abook/abookrc" --datafile="$XDG_DATA_HOME/abook/addressbook"' \
     cp='cp -iv' \
     dotfiles='git --git-dir="$XDG_DATA_HOME/dotfiles" --work-tree="$HOME"' \
     ip='ip -c=auto' \
