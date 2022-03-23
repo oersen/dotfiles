@@ -14,7 +14,7 @@ set postponed = "+Drafts"
 set record = "+Sent"
 set trash = "+Trash"
 
-mailboxes ! +INBOX +Drafts +Sent +Trash
+mailboxes +INBOX +Sent +Drafts +Trash
 
 auto_view text/html
 auto_view application/pgp-encrypted
@@ -22,30 +22,30 @@ alternative_order text/plain text/enriched text/html
 
 set askcc
 set attribution = "On %d, %n wrote:"
-set date_format="%y/%m/%d %I:%M%p"
+set date_format = "%y/%m/%d %I:%M%p"
 set edit_headers
 set envelope_from
 set fcc_attach
 set forward_format = "Fwd: %s"
 set forward_quote
 set include
-set index_format="%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
+set index_format = "%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"
 set mail_check_stats
 set mark_old = no
 set markers = no
-set mime_forward = yes
+set mime_forward
 set mime_type_query_command = "file --mime-type -b %s"
 set pager_stop
 set query_command = "abook --config=$XDG_CONFIG_HOME/abook/abookrc --datafile=$XDG_DATA_HOME/abook/addressbook --mutt-query '%s'"
 set reply_to
 set reverse_name
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/? %?S?%S?"
-set sidebar_next_new_wrap = yes
-set sidebar_short_path = yes
-set sidebar_visible = yes
+set sidebar_next_new_wrap
+set sidebar_short_path
+set sidebar_visible
 set sidebar_width = 20
 set sig_dashes
-set sort = 'reverse-date'
+set sort = "reverse-date"
 set tilde
 
 bind index,pager g noop
@@ -66,20 +66,20 @@ bind index,pager \Cp sidebar-prev-new
 bind index,pager \Cn sidebar-next-new
 bind index,pager B sidebar-toggle-visible
 
-macro index,pager gi "<change-folder>=INBOX<enter>" "go to inbox"
-macro index,pager Mi ";<save-message>=INBOX<enter>" "move mail to inbox"
-macro index,pager Ci ";<copy-message>=INBOX<enter>" "copy mail to inbox"
-macro index,pager gd "<change-folder>=Drafts<enter>" "go to drafts"
-macro index,pager Md ";<save-message>=Drafts<enter>" "move mail to drafts"
-macro index,pager Cd ";<copy-message>=Drafts<enter>" "copy mail to drafts"
-macro index,pager gt "<change-folder>=Trash<enter>" "go to trash"
-macro index,pager Mt ";<save-message>=Trash<enter>" "move mail to trash"
-macro index,pager Ct ";<copy-message>=Trash<enter>" "copy mail to trash"
-macro index,pager gs "<change-folder>=Sent<enter>" "go to sent"
-macro index,pager Ms ";<save-message>=Sent<enter>" "move mail to sent"
-macro index,pager Cs ";<copy-message>=Sent<enter>" "copy mail to sent"
+macro index,pager gi "<change-folder>+INBOX<return>" "go to inbox"
+macro index,pager gs "<change-folder>+Sent<return>" "go to sent"
+macro index,pager gd "<change-folder>+Drafts<return>" "go to drafts"
+macro index,pager gt "<change-folder>+Trash<return>" "go to trash"
+macro index,pager Ci "<copy-message>+INBOX<return>" "copy mail to inbox"
+macro index,pager Cs "<copy-message>+Sent<return>" "copy mail to sent"
+macro index,pager Cd "<copy-message>+Drafts<return>" "copy mail to drafts"
+macro index,pager Ct "<copy-message>+Trash<return>" "copy mail to trash"
+macro index,pager Mi "<save-message>+INBOX<return>" "move mail to inbox"
+macro index,pager Ms "<save-message>+Sent<return>" "move mail to sent"
+macro index,pager Md "<save-message>+Drafts<return>" "move mail to drafts"
+macro index,pager Mt "<save-message>+Trash<return>" "move mail to trash"
 
-macro generic,index,pager \Ca \
+macro index,pager \Ca \
 "<shell-escape>abook --config=$XDG_CONFIG_HOME/abook/abookrc --datafile=$XDG_DATA_HOME/abook/addressbook<return>" \
 "launch abook"
 
