@@ -46,30 +46,30 @@ endif
 
 nmap <Space> <Leader>
 
-nnoremap <Leader>c :let &l:colorcolumn = 80 - &l:colorcolumn<CR>
-nnoremap <Leader>d :filetype detect<CR>
-nnoremap <Leader>f :Vexplore<CR>
+nnoremap <Leader>c :let &l:colorcolumn = 80 - &l:colorcolumn<Return>
+nnoremap <Leader>d :filetype detect<Return>
+nnoremap <Leader>f :Vexplore<Return>
 nnoremap <leader>g :vimgrep // %<Bar>botright copen<C-b><S-Right><S-Right><Left>
-nnoremap <Leader>h :setlocal hlsearch!<CR>
-nnoremap <Leader>j :cnext<CR>
-nnoremap <Leader>k :cprevious<CR>
-nnoremap <Leader>l :setlocal list!<CR>
-nnoremap <Leader>m :write<Bar>make<CR>
-nnoremap <Leader>n :setlocal number! relativenumber!<CR>
+nnoremap <Leader>h :setlocal hlsearch!<Return>
+nnoremap <Leader>j :cnext<Return>
+nnoremap <Leader>k :cprevious<Return>
+nnoremap <Leader>l :setlocal list!<Return>
+nnoremap <Leader>m :write<Bar>make<Return>
+nnoremap <Leader>n :setlocal number! relativenumber!<Return>
 nnoremap <Leader>p "0p
 nnoremap <Leader>P "0P
-nnoremap <Leader>r :if &filetype ==# "vim"<Bar>source %<Bar>endif<CR>
-nnoremap <Leader>s :setlocal spell!<CR>
-nnoremap <Leader>t :terminal<CR>
-nnoremap <Leader>v :vertical terminal<CR>
-nnoremap <Leader>w :setlocal wrap!<CR>
-nnoremap <Leader>x :Hexplore<CR>
+nnoremap <Leader>r :if &filetype ==# "vim"<Bar>source %<Bar>endif<Return>
+nnoremap <Leader>s :setlocal spell!<Return>
+nnoremap <Leader>t :terminal<Return>
+nnoremap <Leader>v :vertical terminal<Return>
+nnoremap <Leader>w :setlocal wrap!<Return>
+nnoremap <Leader>x :Hexplore<Return>
 
 nnoremap <Leader><Left> <C-t>
 nnoremap <Leader><Right> <C-]>
 
-nnoremap <Leader><Down> :bnext<CR>
-nnoremap <Leader><Up> :bprevious<CR>
+nnoremap <Leader><Down> :bnext<Return>
+nnoremap <Leader><Up> :bprevious<Return>
 
 nnoremap Y y$
 

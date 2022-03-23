@@ -3,6 +3,6 @@ if exists("b:undo_ftplugin")
 else
     let b:undo_ftplugin = ""
 endif
-let b:undo_ftplugin ..= "setlocal undofile< textwidth<"
+let b:undo_ftplugin ..= "setlocal spell< undofile< textwidth<"
 
-setlocal noundofile textwidth=72
+setlocal spell noundofile textwidth=72
