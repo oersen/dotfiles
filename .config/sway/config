@@ -54,6 +54,7 @@ bindsym $mod+Shift+q kill
 bindsym Print exec ss-menu.sh
 bindsym Ctrl+Shift+space exec switch-kblayout.pl
 
+bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
 bindsym --locked $mod+p exec mpc toggle
 bindsym --locked $mod+bracketleft exec mpc seek -6
 bindsym --locked $mod+braceleft exec mpc seek -60
@@ -79,7 +80,9 @@ bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+u exec pick-emoji.sh
 bindsym $mod+Shift+v exec mpv -- "$(wl-paste)"
 bindsym $mod+Shift+w exec firefox
+bindsym --locked $mod+Shift+x exec toggle-display.sh
 
+bindsym XF86Display exec wdisplays
 bindsym XF86Launch1 exec xdg-open "$XDG_CONFIG_HOME/sway/config"
 bindsym XF86Launch3 exec blueman-manager
 bindsym XF86TouchpadOn exec swaymsg input type:touchpad events enabled
@@ -94,7 +97,6 @@ bindsym --locked $mod+XF86AudioRaiseVolume exec pactl set-source-volume @DEFAULT
 bindsym --locked $mod+XF86AudioLowerVolume exec pactl set-source-volume @DEFAULT_SOURCE@ -4%
 bindsym --locked $mod+XF86AudioMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym --locked XF86Display exec toggle-display.sh
 bindsym --locked XF86MonBrightnessDown exec brightnessctl set 4%-
 bindsym --locked XF86MonBrightnessUp exec brightnessctl set 4%+
 
@@ -200,14 +202,14 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-set $exit "EXIT: [S]uspend, [R]eboot, [P]oweroff, [L]ogout, [X]lock"
+set $exit "[P]oweroff, [R]eboot, [S]uspend, [E]xit, [L]ock"
 mode $exit {
     bindsym {
-        s exec systemctl suspend, mode "default"
         p exec systemctl poweroff
         r exec systemctl reboot
-        l exec loginctl terminate-session self
-        x exec swaylock, mode "default"
+        s exec systemctl suspend, mode "default"
+        e exec loginctl terminate-session self
+        l exec swaylock, mode "default"
 
         Return mode "default"
         Escape mode "default"
