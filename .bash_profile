@@ -8,6 +8,7 @@ export \
     EDITOR="vim" PAGER="less" VISUAL="vim" \
     GROFF_NO_SGR="1" \
     INPUTRC="$XDG_CONFIG_HOME/readline/inputrc" \
+    NOTMUCH_CONFIG="$XDG_CONFIG_HOME/notmuch-config" \
     PARALLEL_HOME="$XDG_CONFIG_HOME/parallel" \
     PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store" \
     PATH="${PATH:+"$PATH:"}$HOME/.local/bin" \

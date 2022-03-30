@@ -24,7 +24,6 @@ set askcc
 set attribution = "On %d, %n wrote:"
 set date_format = "%y/%m/%d %I:%M%p"
 set edit_headers
-set envelope_from
 set fcc_attach
 set forward_format = "Fwd: %s"
 set forward_quote
@@ -36,8 +35,7 @@ set markers = no
 set mime_forward
 set mime_type_query_command = "file --mime-type -b %s"
 set pager_stop
-set query_command = "abook --config=$XDG_CONFIG_HOME/abook/abookrc --datafile=$XDG_DATA_HOME/abook/addressbook --mutt-query '%s'"
-set reply_to
+set query_command = "abook -C $XDG_CONFIG_HOME/abook/abookrc -f $XDG_DATA_HOME/abook/addressbook --mutt-query '%s'"
 set reverse_name
 set sidebar_format = "%B%?F? [%F]?%* %?N?%N/? %?S?%S?"
 set sidebar_next_new_wrap
@@ -80,11 +78,11 @@ macro index,pager Md "<save-message>+Drafts<return>" "move mail to drafts"
 macro index,pager Mt "<save-message>+Trash<return>" "move mail to trash"
 
 macro index,pager \Ca \
-"<shell-escape>abook --config=$XDG_CONFIG_HOME/abook/abookrc --datafile=$XDG_DATA_HOME/abook/addressbook<return>" \
+"<shell-escape>abook -C $XDG_CONFIG_HOME/abook/abookrc -f $XDG_DATA_HOME/abook/addressbook<return>" \
 "launch abook"
 
 macro index,pager A \
-"<pipe-message>abook --config=$XDG_CONFIG_HOME/abook/abookrc --datafile=$XDG_DATA_HOME/abook/addressbook --add-email<return>" \
+"<pipe-message>abook -C $XDG_CONFIG_HOME/abook/abookrc -f $XDG_DATA_HOME/abook/addressbook --add-email<return>" \
 "add the sender address to abook"
 
 color index yellow default ".*"

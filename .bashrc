@@ -19,14 +19,14 @@ HISTSIZE="65536"
 HISTTIMEFORMAT="[%c]  "
 
 alias \
-    abook='abook --config="$XDG_CONFIG_HOME/abook/abookrc" --datafile="$XDG_DATA_HOME/abook/addressbook"' \
+    abook='abook -C "$XDG_CONFIG_HOME/abook/abookrc" -f "$XDG_DATA_HOME/abook/addressbook"' \
     cp='cp -iv' \
     dotfiles='git --git-dir="$XDG_DATA_HOME/dotfiles" --work-tree="$HOME"' \
-    ip='ip -c=auto' \
+    ip='ip -c' \
     iperl='RLWRAP_HOME=$XDG_STATE_HOME rlwrap -A -pWHITE -S"perl> " perl -wnE'\''say eval()//$@'\' \
     irssi='irssi --config="$XDG_CONFIG_HOME/irssi/config" --home="$XDG_DATA_HOME/irssi"' \
     ls='ls --color=auto --group-directories-first' \
-    mbsync='mbsync --config="$XDG_CONFIG_HOME/isync/mbsyncrc"' \
+    mbsync='mbsync -c "$XDG_CONFIG_HOME/isync/mbsyncrc"' \
     mv='mv -iv' \
     rm='rm -Iv'
 
