@@ -80,6 +80,7 @@ sudo dnf install \
     gstreamer1-vaapi \
     gvfs-mtp \
     gvfs-smb \
+    highlight \
     igt-gpu-tools \
     ImageMagick \
     imv \

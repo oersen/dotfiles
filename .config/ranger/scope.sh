@@ -20,7 +20,8 @@ case "$mimetype" in
         transmission-show -- "$file_path" && exit 5 ;;
 
     text/*|*csv|*xml)
-        pygmentize -f terminal256 -O style=native -- "$file_path" && exit 5 || exit 2 ;;
+        [ "$(stat --printf='%s' -- "$file_path")" -gt 262144 ] && exit 2
+        highlight -q -t 8 -s pablo -O xterm256 -- "$file_path" && exit 5 || exit 2 ;;
 esac
 
 case "$file_extension_lower" in
