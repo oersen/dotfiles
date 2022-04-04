@@ -51,7 +51,7 @@ bindsym $mod+d exec wofi -a
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
-bindsym Print exec ss-menu.sh
+bindsym Print exec print-screen.sh
 bindsym Ctrl+Shift+space exec switch-kblayout.pl
 
 bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
@@ -74,7 +74,7 @@ bindsym $mod+Shift+period exec pick-color.sh
 bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
 bindsym $mod+Shift+d exec udiskie --appindicator
 bindsym $mod+Shift+f exec pcmanfm
-bindsym $mod+Shift+p exec pass-menu.sh
+bindsym $mod+Shift+p exec password-store.sh
 bindsym $mod+Shift+s exec pkill wshowkeys || wshowkeys
 bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+u exec pick-emoji.sh
