@@ -174,6 +174,7 @@ sudo dnf install \
     wofi \
     words \
     wshowkeys \
+    xarchiver \
     yt-dlp \
     zathura-pdf-mupdf \
     zip

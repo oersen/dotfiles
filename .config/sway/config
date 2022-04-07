@@ -11,7 +11,7 @@ input type:keyboard {
     xkb_options "caps:escape"
 }
 
-output * bg ~/Pictures/wallpaper fill
+output * bg "#262626" solid_color
 seat * hide_cursor 36000
 
 bar swaybar_command waybar
@@ -42,6 +42,7 @@ for_window [app_id="^simple-scan$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
+for_window [app_id="^xarchiver$"] floating enable
 for_window [class="^Gvim$"] floating enable
 for_window [floating] border pixel
 for_window [shell="xwayland"] title_format "%title [%shell]"
@@ -85,6 +86,7 @@ bindsym --locked $mod+Shift+x exec toggle-display.sh
 bindsym XF86Display exec wdisplays
 bindsym XF86Launch1 exec xdg-open "$XDG_CONFIG_HOME/sway/config"
 bindsym XF86Launch3 exec blueman-manager
+bindsym XF86Search exec wofi -a
 bindsym XF86TouchpadOn exec swaymsg input type:touchpad events enabled
 bindsym XF86TouchpadOff exec swaymsg input type:touchpad events disabled
 bindsym XF86WLAN exec [ "$(nmcli radio wifi)" = "enabled" ] && nmcli radio wifi off || nmcli radio wifi on
