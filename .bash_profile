@@ -17,7 +17,6 @@ export \
 
 if [ "$(tty)" = "/dev/tty1" ]; then
     export \
-        GTK2_RC_FILES="$XDG_CONFIG_HOME/gtk-2.0/gtkrc" \
         MOZ_ENABLE_WAYLAND="1" \
         NO_AT_BRIDGE="1" \
         QT_QPA_PLATFORMTHEME="gnome" \

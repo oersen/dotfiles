@@ -30,12 +30,18 @@ alias \
     mv='mv -iv' \
     rm='rm -Iv'
 
-delete_from_history() {
+clean_history() {
     local number pattern
 
-    for pattern in "${@:?"no pattern to delete"}"; do
-        for number in $(history | awk -v "p=$pattern" '$0 ~ p { print $1 }' | sort -nr); do
+    if [ -n "$1" ]; then
+        for pattern in "$@"; do
+            for number in $(history | awk -v "p=$pattern" '$0 ~ p { print $1 }' | sort -nr); do
+                history -d "$number"
+            done
+        done
+    else
+        for number in $(history | perl -ne 's/\s+$//; s/(^\d+).*]\s+//; print "$1\n" if $cmdline{$_}++' | sort -nr); do
             history -d "$number"
         done
-    done
+    fi
 }
