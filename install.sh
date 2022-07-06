@@ -98,7 +98,6 @@ sudo dnf install \
     man-pages \
     mesa-dri-drivers \
     microcode_ctl \
-    mlocate \
     mozilla-ublock-origin \
     mpc \
     mpd \
@@ -131,6 +130,7 @@ sudo dnf install \
     pinentry-gnome3 \
     pipewire-pulseaudio \
     pipewire-utils \
+    plocate \
     podman \
     polkit-gnome \
     power-profiles-daemon \
@@ -153,6 +153,7 @@ sudo dnf install \
     tcpdump \
     telnet \
     tmux \
+    torbrowser-launcher \
     translate-shell \
     transmission-daemon \
     udiskie \
