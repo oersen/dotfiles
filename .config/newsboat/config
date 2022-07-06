@@ -1,6 +1,7 @@
 auto-reload yes
 browser xdg-open
 confirm-exit yes
+confirm-mark-feed-read no
 max-items 96
 notify-always yes
 notify-beep yes
