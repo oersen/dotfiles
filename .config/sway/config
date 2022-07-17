@@ -40,6 +40,7 @@ for_window [app_id="^pavucontrol$"] floating enable
 for_window [app_id="^pcmanfm$"] floating enable
 for_window [app_id="^simple-scan$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
+for_window [app_id="^tuned-gui$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
 for_window [app_id="^xarchiver$"] floating enable

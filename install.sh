@@ -133,7 +133,6 @@ sudo dnf install \
     plocate \
     podman \
     polkit-gnome \
-    power-profiles-daemon \
     pulseaudio-utils \
     pv \
     qgnomeplatform \
@@ -156,6 +155,7 @@ sudo dnf install \
     torbrowser-launcher \
     translate-shell \
     transmission-daemon \
+    tuned-gtk \
     udiskie \
     unrar \
     urlview \
