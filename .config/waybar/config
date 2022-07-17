@@ -44,23 +44,25 @@
     "clock": {
         "format": "{:%I:%M %p}",
         "format-alt": "{:%a %d %b %Y}",
-        "tooltip-format": "<small>{:%B %Y}</small>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<small>{:%B %Y}</small>\n<tt><small>{calendar}</small></tt>"
     },
     "cpu": {
         "format": "{usage}% ",
         "format-alt": "{load}% ",
-        "tooltip": false,
+        "tooltip": false
     },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
-        }
+        },
+        "tooltip": false
     },
     "memory": {
         "format": "{percentage}% ",
-        "format-alt": "{avail:0.1f}GiB ",
+        "format-alt": "{used:0.1f}GiB ",
+        "tooltip": false
     },
     "pulseaudio": {
         "format": "{volume}% {icon}",
@@ -77,7 +79,8 @@
             "default": ["", "", ""]
         },
         "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-        "on-click-right": "pavucontrol -t 3"
+        "on-click-right": "pavucontrol -t 3",
+        "tooltip": false
     },
     "pulseaudio#source": {
         "format": "{format_source}",
@@ -86,13 +89,15 @@
         "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
         "on-click-right": "pavucontrol -t 4",
         "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -1%",
-        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%"
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +1%",
+        "tooltip": false
     },
     "temperature": {
         "critical-threshold": 80,
         "format": "{temperatureC} °C {icon}",
         "format-alt": "{temperatureF} °F {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""],
+        "tooltip": false
     },
     "tray": {
         "icon-size": 16,
