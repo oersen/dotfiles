@@ -6,12 +6,12 @@ use warnings;
 my ( $key, @words, %anagrams );
 
 while (<>) {
-    @words = split /[\s_]+/, lc =~ s/[^\w]+/ /gr;
+    @words = split /[\s_]+/, lc =~ s/[\W]+/ /gr;
 
     next unless @words;
 
     for my $word (@words) {
-        $key = join "", ( sort split //, $word );
+        $key = join "", sort split //, $word;
 
         $anagrams{$key}{$word}++;
     }

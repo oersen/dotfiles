@@ -10,6 +10,4 @@ for my $i ( 0 .. 255 ) {
     print "\n" if $i % 8 == 7;
 }
 
-END {
-    print color("reset");
-}
+print color("reset");

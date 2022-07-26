@@ -32,9 +32,9 @@ while ( $money > 0 ) {
     print "\n[ROUND $rounds]\nDealt: '$fullnames[0]' & '$fullnames[1]'\n";
 
     my $bet = "";
-    while ( $bet !~ /\A\d+\z/ or $bet > $money ) {
+    while ( $bet !~ /\A\d+\n?\z/ or $bet > $money ) {
         print "Amount of the bet (max $money): ";
-        chomp( $bet = <STDIN> );
+        $bet = <STDIN> or die "Chicken!\n";
     }
 
     if ( $bet == 0 ) {
