@@ -28,7 +28,7 @@ client.unfocused $black $gray $black $white $gray
 client.urgent $white $gray $black $white $gray
 
 for_window [app_id="^blueman"] floating enable
-for_window [app_id="^firefox$" title="^About Mozilla Firefox|Library|Tor Browser$"] floating enable
+for_window [app_id="^firefox$"] floating enable
 for_window [app_id="^galculator$"] floating enable
 for_window [app_id="^imv$"] floating enable
 for_window [app_id="^libreoffice"] floating enable
@@ -40,6 +40,7 @@ for_window [app_id="^pavucontrol$"] floating enable
 for_window [app_id="^pcmanfm$"] floating enable
 for_window [app_id="^simple-scan$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
+for_window [app_id="^Tor Browser$"] floating enable
 for_window [app_id="^tuned-gui$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
