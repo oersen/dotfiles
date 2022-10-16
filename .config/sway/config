@@ -78,6 +78,7 @@ bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
 bindsym $mod+Shift+d exec udiskie --appindicator
 bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+Shift+p exec password-store.sh
+bindsym $mod+Shift+r exec redirect.pl
 bindsym $mod+Shift+s exec pkill wshowkeys || wshowkeys
 bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+u exec pick-emoji.sh

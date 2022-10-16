@@ -28,6 +28,9 @@
     sendmailcmd = msmtp
     suppresscc = self
 
+[tag]
+    gpgsign = true
+
 [user]
     name = Oğuz Ersen
     email = oguz@ersen.moe
