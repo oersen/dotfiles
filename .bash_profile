@@ -23,7 +23,8 @@ if [ "$(tty)" = "/dev/tty1" ]; then
         SDL_VIDEODRIVER="wayland" \
         XDG_CURRENT_DESKTOP="sway" \
         XDG_SESSION_DESKTOP="sway" \
-        XDG_SESSION_TYPE="wayland"
+        XDG_SESSION_TYPE="wayland" \
+        _JAVA_AWT_WM_NONREPARENTING="1"
 
     exec sway >"/dev/null" 2>&1
 fi

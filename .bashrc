@@ -30,7 +30,7 @@ alias \
     mv='mv -iv' \
     rm='rm -Iv'
 
-clean_history() {
+hstclr() {
     local number pattern
 
     if [ -n "$1" ]; then

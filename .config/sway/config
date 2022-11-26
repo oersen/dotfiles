@@ -28,17 +28,23 @@ client.unfocused $black $gray $black $white $gray
 client.urgent $white $gray $black $white $gray
 
 for_window [app_id="^blueman"] floating enable
+for_window [app_id="^com\.obsproject\.Studio$"] floating enable
 for_window [app_id="^firefox$"] floating enable
 for_window [app_id="^galculator$"] floating enable
 for_window [app_id="^imv$"] floating enable
+for_window [app_id="^keepassxc$"] floating enable
 for_window [app_id="^libreoffice"] floating enable
 for_window [app_id="^mpv$"] floating enable
 for_window [app_id="^nm-connection-editor$"] floating enable
+for_window [app_id="^nm-openconnect-auth-dialog$"] floating enable
 for_window [app_id="^org\.keepassxc\.KeePassXC$"] floating enable
 for_window [app_id="^org\.pwmt\.zathura$"] floating enable
+for_window [app_id="^org\.wireshark\.Wireshark$"] floating enable
 for_window [app_id="^pavucontrol$"] floating enable
 for_window [app_id="^pcmanfm$"] floating enable
 for_window [app_id="^simple-scan$"] floating enable
+for_window [app_id="^soffice$"] floating enable
+for_window [app_id="^solaar$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
 for_window [app_id="^Tor Browser$"] floating enable
 for_window [app_id="^tuned-gui$"] floating enable
@@ -55,23 +61,11 @@ bindsym $mod+d exec wofi -a
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
 bindsym Print exec print-screen.sh
+bindsym $mod+Print exec grimshot copy area && wl-paste | imv -
 bindsym Ctrl+Shift+space exec switch-kblayout.pl
 
-bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
-bindsym --locked $mod+p exec mpc toggle
-bindsym --locked $mod+bracketleft exec mpc seek -6
-bindsym --locked $mod+braceleft exec mpc seek -60
-bindsym --locked $mod+bracketright exec mpc seek +6
-bindsym --locked $mod+braceright exec mpc seek +60
-bindsym --locked $mod+greater exec mpc next
-bindsym --locked $mod+less exec mpc prev
-
-bindsym $mod+Delete exec makoctl dismiss
-bindsym $mod+Shift+Delete exec makoctl dismiss -a
-bindsym $mod+Insert exec notify-send -i editcopy -t 8000 "CLIPBOARD:" "$(wl-paste)"
-bindsym $mod+Shift+Insert exec notify-send -i editcopy -t 8000 "PRIMARY:" "$(wl-paste -p)"
-
 bindsym $mod+c exec galculator
+bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
 bindsym $mod+q exec qrencode -o- "$(wl-paste)" | imv -
 bindsym $mod+Shift+period exec pick-color.sh
 bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
@@ -84,7 +78,21 @@ bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+u exec pick-emoji.sh
 bindsym $mod+Shift+v exec mpv -- "$(wl-paste)"
 bindsym $mod+Shift+w exec firefox
+
+bindsym --locked $mod+p exec playerctl play-pause
+bindsym --locked $mod+Shift+m exec mpc toggle
 bindsym --locked $mod+Shift+x exec toggle-display.sh
+bindsym --locked $mod+bracketleft exec mpc seek -6
+bindsym --locked $mod+braceleft exec mpc seek -60
+bindsym --locked $mod+bracketright exec mpc seek +6
+bindsym --locked $mod+braceright exec mpc seek +60
+bindsym --locked $mod+greater exec mpc next
+bindsym --locked $mod+less exec mpc prev
+
+bindsym $mod+Delete exec makoctl dismiss
+bindsym $mod+Shift+Delete exec makoctl dismiss -a
+bindsym $mod+Insert exec notify-send -i editcopy -t 8000 "CLIPBOARD:" "$(wl-paste)"
+bindsym $mod+Shift+Insert exec notify-send -i editcopy -t 8000 "PRIMARY:" "$(wl-paste -p)"
 
 bindsym XF86Display exec wdisplays
 bindsym XF86Launch1 exec xdg-open "$XDG_CONFIG_HOME/sway/config"
@@ -226,7 +234,7 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 exec nm-applet --indicator
 exec wlsunset -T4800 -t3600 -l39.9 -L32.8
 exec swayidle -w \
-        timeout 60 "swaymsg 'output * dpms off'" \
-        resume "swaymsg 'output * dpms on'" \
+        timeout 60 "swaymsg 'output * power off'" \
+        resume "swaymsg 'output * power on'" \
         timeout 600 swaylock \
         before-sleep swaylock

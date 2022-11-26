@@ -5,3 +5,6 @@ show_panel=true
 line_size=4
 text_size=24
 text_font=monospace
+paint_mode=brush
+early_exit=false
+fill_shape=false
