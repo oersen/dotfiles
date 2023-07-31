@@ -2,9 +2,14 @@
     "height": 30,
     "modules-left": ["sway/workspaces", "wlr/taskbar"],
     "modules-center": ["sway/mode"],
-    "modules-right": ["memory", "cpu", "temperature", "battery", "backlight", "pulseaudio#source", "pulseaudio", "idle_inhibitor", "clock", "tray"],
+    "modules-right": ["sway/scratchpad", "memory", "cpu", "temperature", "battery", "backlight", "pulseaudio#source", "pulseaudio", "idle_inhibitor", "clock", "tray"],
     "sway/mode": {
         "format": "✳ {} ✳"
+    },
+    "sway/scratchpad": {
+        "format": "{count} {icon}",
+        "format-icons": ["", ""],
+        "tooltip-format": "{app}: {title}"
     },
     "sway/workspaces": {
         "all-outputs": true,
@@ -19,10 +24,7 @@
             "7": "VII",
             "8": "VIII",
             "9": "IX",
-            "10": "X",
-            "urgent": "",
-            "focused": "",
-            "default": ""
+            "10": "X"
         }
     },
     "backlight": {
