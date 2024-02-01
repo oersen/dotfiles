@@ -47,6 +47,7 @@ for_window [app_id="^soffice$"] floating enable
 for_window [app_id="^solaar$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
 for_window [app_id="^Tor Browser$"] floating enable
+for_window [app_id="^thunderbird$"] floating enable
 for_window [app_id="^tuned-gui$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
@@ -68,13 +69,14 @@ bindsym $mod+c exec galculator
 bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
 bindsym $mod+q exec qrencode -o- "$(wl-paste)" | imv -
 bindsym $mod+Shift+period exec pick-color.sh
+bindsym $mod+Shift+a exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
 bindsym $mod+Shift+d exec udiskie --appindicator
 bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+Shift+p exec password-store.sh
 bindsym $mod+Shift+r exec redirect.pl
 bindsym $mod+Shift+s exec pkill wshowkeys || wshowkeys
-bindsym $mod+Shift+t exec pkill wvkbd-mobintl || wvkbd-mobintl
+bindsym $mod+Shift+t exec thunderbird
 bindsym $mod+Shift+u exec pick-emoji.sh
 bindsym $mod+Shift+v exec mpv -- "$(wl-paste)"
 bindsym $mod+Shift+w exec firefox
