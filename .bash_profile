@@ -20,6 +20,7 @@ if [ "$(tty)" = "/dev/tty1" ]; then
         MOZ_ENABLE_WAYLAND="1" \
         NO_AT_BRIDGE="1" \
         QT_QPA_PLATFORMTHEME="gnome" \
+        QT_STYLE_OVERRIDE="Adwaita-Dark" \
         SDL_VIDEODRIVER="wayland" \
         XDG_CURRENT_DESKTOP="sway" \
         XDG_SESSION_DESKTOP="sway" \
