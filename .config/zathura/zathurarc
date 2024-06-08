@@ -7,7 +7,7 @@ set recolor-lightcolor "#bcbcbc"
 set selection-clipboard "clipboard"
 set selection-notification false
 set show-hidden true
-set show-recent 4
+set show-recent 8
 set statusbar-bg "#1c1c1c"
 set statusbar-fg "#bcbcbc"
 set statusbar-home-tilde true

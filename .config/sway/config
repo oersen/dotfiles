@@ -29,7 +29,6 @@ client.urgent $white $gray $black $white $gray
 
 for_window [app_id="^blueman"] floating enable
 for_window [app_id="^com\.obsproject\.Studio$"] floating enable
-for_window [app_id="^firefox$"] floating enable
 for_window [app_id="^galculator$"] floating enable
 for_window [app_id="^imv$"] floating enable
 for_window [app_id="^keepassxc$"] floating enable
@@ -38,6 +37,8 @@ for_window [app_id="^mpv$"] floating enable
 for_window [app_id="^nm-connection-editor$"] floating enable
 for_window [app_id="^nm-openconnect-auth-dialog$"] floating enable
 for_window [app_id="^org\.keepassxc\.KeePassXC$"] floating enable
+for_window [app_id="^org\.mozilla\.firefox$"] floating enable
+for_window [app_id="^org\.mozilla\.thunderbird$"] floating enable
 for_window [app_id="^org\.pwmt\.zathura$"] floating enable
 for_window [app_id="^org\.wireshark\.Wireshark$"] floating enable
 for_window [app_id="^pavucontrol$"] floating enable
@@ -47,7 +48,6 @@ for_window [app_id="^soffice$"] floating enable
 for_window [app_id="^solaar$"] floating enable
 for_window [app_id="^system-config-printer$"] floating enable
 for_window [app_id="^Tor Browser$"] floating enable
-for_window [app_id="^thunderbird$"] floating enable
 for_window [app_id="^tuned-gui$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
