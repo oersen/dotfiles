@@ -11,5 +11,5 @@ printf "%s\n" \
     "copy active" \
     "copy window" \
     "copy area" \
-    | wofi -dL 10 \
+    | wofi -dL 11 \
     | xargs grimshot --notify

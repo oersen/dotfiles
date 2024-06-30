@@ -17,6 +17,7 @@ export \
 
 if [ "$(tty)" = "/dev/tty1" ]; then
     export \
+        GVIM_ENABLE_WAYLAND="1" \
         MOZ_ENABLE_WAYLAND="1" \
         NO_AT_BRIDGE="1" \
         QT_QPA_PLATFORMTHEME="gnome" \

@@ -30,6 +30,7 @@ client.urgent $white $gray $black $white $gray
 for_window [app_id="^blueman"] floating enable
 for_window [app_id="^com\.obsproject\.Studio$"] floating enable
 for_window [app_id="^galculator$"] floating enable
+for_window [app_id="^gvim$"] floating enable
 for_window [app_id="^imv$"] floating enable
 for_window [app_id="^keepassxc$"] floating enable
 for_window [app_id="^libreoffice"] floating enable
@@ -52,7 +53,6 @@ for_window [app_id="^tuned-gui$"] floating enable
 for_window [app_id="^udiskie$"] floating enable
 for_window [app_id="^wdisplays$"] floating enable
 for_window [app_id="^xarchiver$"] floating enable
-for_window [class="^Gvim$"] floating enable
 for_window [floating] border pixel
 for_window [shell="xwayland"] title_format "%title [%shell]"
 
@@ -63,7 +63,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
 bindsym Print exec print-screen.sh
 bindsym $mod+Print exec grimshot copy area && wl-paste | imv -
-bindsym Ctrl+Shift+space exec switch-kblayout.pl
+bindsym Ctrl+Shift+space exec switch-kblayout.sh
 
 bindsym $mod+c exec galculator
 bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
