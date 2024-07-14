@@ -1,8 +1,9 @@
 background-color=#1c1c1c
 border-color=#bcbcbc
 border-size=2
+default-timeout=8000
 font=sans-serif 11
 icon-path=/usr/share/icons/Papirus-Dark
-on-button-middle=dismiss-all
+on-button-middle=dismiss-group
 text-alignment=center
 text-color=#bcbcbc
