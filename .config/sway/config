@@ -40,9 +40,9 @@ for_window [app_id="^nm-openconnect-auth-dialog$"] floating enable
 for_window [app_id="^org\.keepassxc\.KeePassXC$"] floating enable
 for_window [app_id="^org\.mozilla\.firefox$"] floating enable
 for_window [app_id="^org\.mozilla\.thunderbird$"] floating enable
+for_window [app_id="^org\.pulseaudio\.pavucontrol$"] floating enable
 for_window [app_id="^org\.pwmt\.zathura$"] floating enable
 for_window [app_id="^org\.wireshark\.Wireshark$"] floating enable
-for_window [app_id="^pavucontrol$"] floating enable
 for_window [app_id="^pcmanfm$"] floating enable
 for_window [app_id="^simple-scan$"] floating enable
 for_window [app_id="^soffice$"] floating enable
@@ -62,28 +62,22 @@ bindsym $mod+d exec wofi -a
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
 bindsym Print exec print-screen.sh
-bindsym $mod+Print exec grimshot copy area && wl-paste | imv -
-bindsym Ctrl+Shift+space exec switch-kblayout.sh
+bindsym $mod+Print exec grimshot copy area && wl-paste | swappy -f -
 
-bindsym $mod+c exec galculator
 bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
 bindsym $mod+q exec qrencode -o- "$(wl-paste)" | imv -
 bindsym $mod+Shift+period exec pick-color.sh
 bindsym $mod+Shift+a exec pkill wvkbd-mobintl || wvkbd-mobintl
 bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
 bindsym $mod+Shift+d exec udiskie --appindicator
-bindsym $mod+Shift+f exec pcmanfm
 bindsym $mod+Shift+p exec password-store.sh
-bindsym $mod+Shift+r exec redirect.pl
+bindsym $mod+Shift+r exec remmina -i
 bindsym $mod+Shift+s exec pkill wshowkeys || wshowkeys
-bindsym $mod+Shift+t exec thunderbird
 bindsym $mod+Shift+u exec pick-emoji.sh
 bindsym $mod+Shift+v exec mpv -- "$(wl-paste)"
-bindsym $mod+Shift+w exec firefox
 
 bindsym --locked $mod+p exec playerctl play-pause
 bindsym --locked $mod+Shift+m exec mpc toggle
-bindsym --locked $mod+Shift+x exec toggle-display.sh
 bindsym --locked $mod+bracketleft exec mpc seek -6
 bindsym --locked $mod+braceleft exec mpc seek -60
 bindsym --locked $mod+bracketright exec mpc seek +6
@@ -96,9 +90,9 @@ bindsym $mod+Shift+Delete exec makoctl dismiss -a
 bindsym $mod+Insert exec notify-send -i editcopy -t 8000 "CLIPBOARD:" "$(wl-paste)"
 bindsym $mod+Shift+Insert exec notify-send -i editcopy -t 8000 "PRIMARY:" "$(wl-paste -p)"
 
-bindsym XF86Display exec wdisplays
+bindsym XF86Display exec toggle-display.sh
 bindsym XF86Launch1 exec xdg-open "$XDG_CONFIG_HOME/sway/config"
-bindsym XF86Launch3 exec blueman-manager
+bindsym XF86Launch3 exec switch-kblayout.sh
 bindsym XF86Search exec wofi -a
 bindsym XF86TouchpadOn exec swaymsg input type:touchpad events enabled
 bindsym XF86TouchpadOff exec swaymsg input type:touchpad events disabled
