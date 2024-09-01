@@ -4,6 +4,7 @@ set default-fg "#bcbcbc"
 set page-padding 4
 set recolor-darkcolor "#1c1c1c"
 set recolor-lightcolor "#bcbcbc"
+set recolor-keephue true
 set selection-clipboard "clipboard"
 set selection-notification false
 set show-hidden true
