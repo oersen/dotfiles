@@ -5,12 +5,6 @@
 [credential]
     helper = cache
 
-[credential "https://codeberg.org"]
-    username = ersen
-
-[credential "https://gitlab.com"]
-    username = ersen
-
 [diff]
     tool = vimdiff
 
