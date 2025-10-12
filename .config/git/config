@@ -11,6 +11,9 @@
 [difftool]
     prompt = false
 
+[grep]
+    linenumber = true
+
 [init]
     defaultbranch = master
 
