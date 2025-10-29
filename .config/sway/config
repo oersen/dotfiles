@@ -226,7 +226,7 @@ mode $exit {
 }
 bindsym $mod+Shift+e mode $exit
 
-exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec /usr/libexec/polkit-mate-authentication-agent-1
 exec nm-applet --indicator
 exec wlsunset -T4800 -t3600 -l39.9 -L32.8
 exec swayidle -w \
