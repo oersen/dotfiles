@@ -57,7 +57,7 @@ for_window [floating] border pixel
 for_window [shell="xwayland"] title_format "%title [%shell]"
 
 bindsym $mod+Return exec foot
-bindsym $mod+d exec wofi -a
+bindsym $mod+d exec wofi -a -S drun
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
@@ -227,7 +227,7 @@ mode $exit {
 bindsym $mod+Shift+e mode $exit
 
 exec /usr/libexec/polkit-mate-authentication-agent-1
-exec nm-applet --indicator
+exec nm-applet
 exec wlsunset -T4800 -t3600 -l39.9 -L32.8
 exec swayidle -w \
         timeout 60 "swaymsg 'output * power off'" \
