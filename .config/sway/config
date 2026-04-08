@@ -61,6 +61,7 @@ bindsym $mod+d exec wofi -a -S drun
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+q kill
+bindsym Menu exec wofi -a
 bindsym Print exec print-screen.sh
 bindsym $mod+Print exec grimshot copy area && wl-paste | swappy -f -
 
