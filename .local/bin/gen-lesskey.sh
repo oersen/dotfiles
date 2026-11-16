@@ -8,7 +8,6 @@ die() {
 bold="4"
 underline="2"
 reset="$(tput sgr0)"
-hstfile="${XDG_STATE_HOME:-"$HOME/.local/state"}/lesshst"
 
 while getopts ":b:u:" opt; do
     case "$opt" in
@@ -41,7 +40,6 @@ done
 cat >"${XDG_CONFIG_HOME:-"$HOME/.config"}/lesskey" <<EOF
 #env
 LESS            = -dgiMnR
-LESSHISTFILE    = $hstfile
 LESS_TERMCAP_md = $(tput bold; tput setaf "$bold")
 LESS_TERMCAP_me = $reset
 LESS_TERMCAP_us = $(tput smul; tput setaf "$underline")
