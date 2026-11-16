@@ -12,7 +12,9 @@
     prompt = false
 
 [grep]
+    fullname = true
     linenumber = true
+    patterntype = extended
 
 [init]
     defaultbranch = master
@@ -24,6 +26,9 @@
     annotate = yes
     sendmailcmd = msmtp
     suppresscc = self
+
+[status]
+    relativepaths = false
 
 [tag]
     gpgsign = true
