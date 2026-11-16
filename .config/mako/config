@@ -4,6 +4,7 @@ border-size=2
 default-timeout=8000
 font=sans-serif 11
 icon-path=/usr/share/icons/Papirus-Dark
+max-icon-size=32
 on-button-middle=dismiss-group
 text-alignment=center
 text-color=#bcbcbc
