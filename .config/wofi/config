@@ -6,6 +6,7 @@ dynamic_lines=true
 hide_scroll=true
 image_size=24
 insensitive=true
+matching=fuzzy
 prompt=
 height=40%
 width=20%
