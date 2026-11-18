@@ -68,7 +68,7 @@ bindsym $mod+Print exec grimshot copy area && wl-paste | swappy -f -
 bindsym $mod+m exec notify-send -i media-play -t 8000 "CURRENTLY PLAYING:" "$(mpc current)"
 bindsym $mod+q exec qrencode -o- "$(wl-paste)" | imv -
 bindsym $mod+Shift+period exec pick-color.sh
-bindsym $mod+Shift+a exec pkill wvkbd-mobintl || wvkbd-mobintl
+bindsym $mod+Shift+a exec pidof -q wvkbd-deskintl && pkill -SIGRTMIN wvkbd-deskintl || wvkbd-deskintl --fn monospace --no-popup -L 240
 bindsym $mod+Shift+b exec pkill -SIGUSR1 waybar
 bindsym $mod+Shift+d exec udiskie --appindicator
 bindsym $mod+Shift+p exec password-store.sh
