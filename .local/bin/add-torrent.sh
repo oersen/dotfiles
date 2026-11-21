@@ -1,6 +1,6 @@
 #!/bin/sh
 
-pidof transmission-daemon >"/dev/null" \
+pidof -q transmission-daemon \
     || { transmission-daemon --log-error -e "/dev/null"; sleep 1; }
 
 transmission-remote -a "$@" || exit

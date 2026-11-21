@@ -1,3 +1,3 @@
 #!/bin/sh
 
-curl -sS "https://qrenco.de/$*"
+curl -sSL "https://qrenco.de/$*"

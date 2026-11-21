@@ -5,4 +5,4 @@ IFS="+"
 
 shift
 
-curl -sS "https://cht.sh/$subject${*:+"/$*"}"
+curl -sSL "https://cht.sh/$subject${*:+"/$*"}"

@@ -22,9 +22,7 @@ while getopts ":f:" opt; do
     esac
 done
 
-if [[ ! -r "$file" ]]; then
-    die "$file: file not readable"
-fi
+[ -r "$file" ] || die "$file: file not readable"
 
 trap 'summary' EXIT
 

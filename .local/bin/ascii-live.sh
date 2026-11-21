@@ -12,16 +12,21 @@ reset_term() {
 
 file="${XDG_STATE_HOME:-"$HOME/.local/state"}/ascii-live.txt"
 
-[ -r "$file" ] || curl -sS "https://ascii.live/list" | jq -r '.frames[]' >"$file"
-
-while getopts ":l" opt; do
+while getopts ":lr" opt; do
     case "$opt" in
         "l" )
-            cat "$file"
+            cat "$file" 2>"/dev/null" || die "$file: file not readable"
+            exit
+            ;;
+
+        "r" )
+            curl -sSL "https://ascii.live/list" | jq -r '.frames[]' >"$file"
             exit
             ;;
     esac
 done
+
+[ -r "$file" ] || die "$file: file not readable"
 
 frame="${1:-"rick"}"
 
@@ -31,7 +36,7 @@ if grep -qx "$frame" "$file"; then
     tput smcup
     tput civis
 
-    curl -sS "https://ascii.live/$frame"
+    curl -sSL "https://ascii.live/$frame"
 else
     die "$frame: invalid frame"
 fi

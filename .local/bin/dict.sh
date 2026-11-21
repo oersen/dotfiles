@@ -18,4 +18,4 @@ shift "$(( OPTIND - 1 ))"
 
 IFS=":"
 
-curl -sS "$query$*"
+curl -sSL "$query$*"
