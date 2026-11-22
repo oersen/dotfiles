@@ -6,6 +6,7 @@ max-items 96
 notify-always yes
 notify-beep yes
 reload-threads 3
+wrap-scroll yes
 
 color info default black
 color listfocus black white
