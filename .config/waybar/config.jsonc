@@ -4,7 +4,8 @@
     "modules-center": ["sway/mode"],
     "modules-right": ["sway/scratchpad", "memory", "cpu", "temperature", "battery", "backlight", "pulseaudio#source", "pulseaudio", "idle_inhibitor", "clock", "tray"],
     "sway/mode": {
-        "format": "☠️ {} ☠️"
+        "format": "☠️ {} ☠️",
+        "tooltip": false
     },
     "sway/scratchpad": {
         "format": "{count} {icon}",
@@ -31,7 +32,8 @@
         "format": "{percent}% {icon}",
         "format-icons": ["🔅", "🔆"],
         "on-scroll-down": "brightnessctl set 1%-",
-        "on-scroll-up": "brightnessctl set 1%+"
+        "on-scroll-up": "brightnessctl set 1%+",
+        "tooltip": false
     },
     "battery": {
         "format": "{capacity}% {icon}",
@@ -46,7 +48,24 @@
     "clock": {
         "format": "{:%I:%M %p}",
         "format-alt": "{:%a %d %b %Y}",
-        "tooltip-format": "<small>{:%B %Y}</small>\n<tt><small>{calendar}</small></tt>"
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar" : {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "today": "<span color='#5f87af'><b><u>{}</u></b></span>",
+                "days": "<span color='#bcbcbc'><b>{}</b></span>",
+                "weekdays": "<span color='#5f5f87'><b>{}</b></span>",
+                "months": "<span color='#5f8787'><b>{}</b></span>"
+            }
+        },
+        "actions": {
+            "on-click-middle": "shift_reset",
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_down",
+            "on-scroll-down": "shift_up"
+        }
     },
     "cpu": {
         "format": "{usage}% ⚙️",
@@ -59,6 +78,7 @@
             "activated": "😎",
             "deactivated": "💤"
         },
+        "start-activated": true,
         "tooltip": false
     },
     "memory": {
@@ -100,8 +120,11 @@
     },
     "temperature": {
         "critical-threshold": 80,
+        "warning-threshold": 70,
         "format": "{temperatureC} °C 🌡️",
         "format-alt": "{temperatureF} °F 🌡️",
+        "format-critical": "{temperatureC} °C 🌶️",
+        "format-warning": "{temperatureC} °C 🥵",
         "tooltip": false
     },
     "tray": {
