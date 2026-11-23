@@ -11,7 +11,7 @@ while getopts ":r" opt; do
     esac
 done
 
-[ -r "$file" ] || notify-send -i state-warning -t 8000 "$file: file not readable"
+[ -r "$file" ] || { notify-send -i state-warning -t 8000 "$file: file not readable"; exit; }
 
 selection="$(wofi -dW 30% <"$file")" || exit
 
