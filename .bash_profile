@@ -11,8 +11,7 @@ export \
     PARALLEL_HOME="$XDG_CONFIG_HOME/parallel" \
     PASSWORD_STORE_DIR="$XDG_DATA_HOME/password-store" \
     PATH="${PATH:+"$PATH:"}$HOME/.local/bin" \
-    SCREENRC="$XDG_CONFIG_HOME/screen/screenrc" \
-    WGETRC="$XDG_CONFIG_HOME/wget/wgetrc"
+    SCREENRC="$XDG_CONFIG_HOME/screen/screenrc"
 
 if [ "$(tty)" = "/dev/tty1" ]; then
     export \
