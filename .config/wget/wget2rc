@@ -1,1 +1,2 @@
-hsts-file = ~/.local/state/wget-hsts
+keep-extension
+prefer-family = IPv4
