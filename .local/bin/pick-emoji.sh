@@ -13,7 +13,7 @@ done
 
 [ -r "$file" ] || { notify-send -i state-warning -t 8000 "$file: file not readable"; exit; }
 
-selection="$(wofi -dW 30% <"$file")" || exit
+selection="$(wofi -d <"$file")" || exit
 
 wl-copy "${selection%%[[:space:]]*}"
 wl-copy -p "${selection#*[[:space:]]}"
