@@ -31,8 +31,11 @@
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": ["🔅", "🔆"],
-        "on-scroll-down": "brightnessctl set 1%-",
-        "on-scroll-up": "brightnessctl set 1%+",
+        "on-click": "brightnessctl -qs set 1%",
+        "on-click-middle": "brightnessctl -r",
+        "on-click-right": "brightnessctl -qs set 100%",
+        "on-scroll-down": "brightnessctl -q set 1%-",
+        "on-scroll-up": "brightnessctl -q set 1%+",
         "tooltip": false
     },
     "battery": {
@@ -132,7 +135,6 @@
         "spacing": 6
     },
     "wlr/taskbar": {
-        "active-first": true,
         "all-outputs": true,
         "format": "{icon}",
         "icon-size": 16,
