@@ -1,10 +1,18 @@
 dismiss-button=⬜
 font=sans-serif 11
 
-[default]
+[error]
 background=1c1c1c
 border=bcbcbc
 border-bottom=bcbcbc
 button-background=1c1c1c
+button-text=bcbcbc
+text=bcbcbc
+
+[warning]
+background=262626
+border=bcbcbc
+border-bottom=bcbcbc
+button-background=262626
 button-text=bcbcbc
 text=bcbcbc
