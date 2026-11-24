@@ -39,7 +39,7 @@ done
 
 cat >"${XDG_CONFIG_HOME:-"$HOME/.config"}/lesskey" <<EOF
 #env
-LESS            = -dgiMnR
+LESS            = -dgiMnR --jump-target=2
 LESS_TERMCAP_md = $(tput bold; tput setaf "$bold")
 LESS_TERMCAP_me = $reset
 LESS_TERMCAP_us = $(tput smul; tput setaf "$underline")
