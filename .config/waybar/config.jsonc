@@ -79,7 +79,7 @@
         "format": "{icon}",
         "format-icons": {
             "activated": "😎",
-            "deactivated": "💤"
+            "deactivated": "😴"
         },
         "start-activated": true,
         "tooltip": false
